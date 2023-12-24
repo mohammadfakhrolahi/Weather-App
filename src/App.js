@@ -3,6 +3,8 @@ import React from 'react'
 import Input from './components/input/Input'
 import Icon from './components/Icon/Icon'
 import CardSm from './components/CardSm/CardSm'
+import CardLg from './components/CardLg/CardLg'
+import Progress from './components/Progress/Progress'
 
 const App = () => {
   return (
@@ -40,37 +42,65 @@ const App = () => {
         <div className="col-9 bg-light p-4 rounded-end-5">
           <div className="row  ">
             <div className="col-12 ">
-              <h3 className='mb-4'>Week</h3>
+              <h3 className="mb-4">Week</h3>
               <div className="row">
-                <div className="col"><CardSm/></div>
-                <div className="col"><CardSm/></div>
-                <div className="col"><CardSm/></div>
-                <div className="col"><CardSm/></div>
-                <div className="col"><CardSm/></div>
-                <div className="col"><CardSm/></div>
-                <div className="col"><CardSm/></div>
+                <div className="col">
+                  <CardSm />
+                </div>
+                <div className="col">
+                  <CardSm />
+                </div>
+                <div className="col">
+                  <CardSm />
+                </div>
+                <div className="col">
+                  <CardSm />
+                </div>
+                <div className="col">
+                  <CardSm />
+                </div>
+                <div className="col">
+                  <CardSm />
+                </div>
+                <div className="col">
+                  <CardSm />
+                </div>
               </div>
             </div>
             <div className="col-12 ">
               <h3>Today's Highlights</h3>
               <div className="row">
                 <div className="col-4 p-0">
-                  <div className="m-2 border">Box</div>
+                  <div className="m-2">
+                    <CardLg>
+                      <Progress style={{ width: '25%' }}/>
+                    </CardLg>
+                  </div>
                 </div>
                 <div className="col-4 p-0">
-                  <div className="m-2 border">Box</div>
+                  <div className="m-2">
+                    <CardLg />
+                  </div>
                 </div>
                 <div className="col-4 p-0">
-                  <div className="m-2 border">Box</div>
+                  <div className="m-2">
+                    <CardLg />
+                  </div>
                 </div>
                 <div className="col-4 p-0">
-                  <div className="m-2 border">Box</div>
+                  <div className="m-2">
+                    <CardLg />
+                  </div>
                 </div>
                 <div className="col-4 p-0">
-                  <div className="m-2 border">Box</div>
+                  <div className="m-2">
+                    <CardLg />
+                  </div>
                 </div>
                 <div className="col-4 p-0">
-                  <div className="m-2 border">Box</div>
+                  <div className="m-2">
+                    <CardLg />
+                  </div>
                 </div>
               </div>
             </div>
