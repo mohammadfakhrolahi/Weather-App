@@ -2,6 +2,7 @@ import React from 'react'
 
 import Input from './components/input/Input'
 import Icon from './components/Icon/Icon'
+import CardSm from './components/CardSm/CardSm'
 
 const App = () => {
   return (
@@ -39,15 +40,15 @@ const App = () => {
         <div className="col-9 bg-light p-4 rounded-end-5">
           <div className="row  ">
             <div className="col-12 ">
-              <h3>Week</h3>
+              <h3 className='mb-4'>Week</h3>
               <div className="row">
-                <div className="col border">Sun</div>
-                <div className="col border">Mon</div>
-                <div className="col border">Tue</div>
-                <div className="col border">Wed</div>
-                <div className="col border">Thu</div>
-                <div className="col border">Fri</div>
-                <div className="col border">Sat</div>
+                <div className="col"><CardSm/></div>
+                <div className="col"><CardSm/></div>
+                <div className="col"><CardSm/></div>
+                <div className="col"><CardSm/></div>
+                <div className="col"><CardSm/></div>
+                <div className="col"><CardSm/></div>
+                <div className="col"><CardSm/></div>
               </div>
             </div>
             <div className="col-12 ">
