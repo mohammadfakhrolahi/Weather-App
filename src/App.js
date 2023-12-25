@@ -6,7 +6,7 @@ import CardSm from './components/CardSm/CardSm'
 import CardLg from './components/CardLg/CardLg'
 import Progress from './components/Progress/Progress'
 import SunriseSunset from './components/SunriseSunset/SunriseSunset'
-import WindStatus from './components/WindStatus/WindStatus'
+import NumberStatus from './components/NumberStatus/NumberStatus'
 
 const App = () => {
   const footer = 'testing footer...'
@@ -85,7 +85,7 @@ const App = () => {
                 <div className="col-4 p-0">
                   <div className="m-2">
                     <CardLg footer={footer} header={header}>
-                      <WindStatus>2.70</WindStatus>
+                      <NumberStatus>2.70</NumberStatus>
                     </CardLg>
                   </div>
                 </div>

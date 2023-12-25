@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WindStatus = (props) => {
+const NumberStatus = (props) => {
   return (
     <div >
       <div>
@@ -11,4 +11,4 @@ const WindStatus = (props) => {
   )
 }
 
-export default WindStatus
+export default NumberStatus
