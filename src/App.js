@@ -72,8 +72,8 @@ const App = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 ">
-              <h3>Today's Highlights</h3>
+            <div className="col-12 mt-5">
+              <h3 className="mb-4">Today's Highlights</h3>
               <div className="row">
                 <div className="col-4 p-0">
                   <div className="m-2">
@@ -92,7 +92,7 @@ const App = () => {
                 <div className="col-4 p-0">
                   <div className="m-2">
                     <CardLg header={'Sunrise & Sunset'}>
-                      <SunriseSunset sunrise={'5:40 AM'} sunset={'6:00 PM'}/>
+                      <SunriseSunset sunrise={'5:40 AM'} sunset={'6:00 PM'} />
                     </CardLg>
                   </div>
                 </div>
@@ -106,14 +106,14 @@ const App = () => {
                 <div className="col-4 p-0">
                   <div className="m-2">
                     <CardLg header={'Visibility'}>
-                    <NumberStatus unit={'km/h'}>5.2</NumberStatus>
+                      <NumberStatus unit={'km/h'}>5.2</NumberStatus>
                     </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg header={'Air Quality'} >
-                    <NumberStatus>105</NumberStatus>
+                    <CardLg header={'Air Quality'}>
+                      <NumberStatus>105</NumberStatus>
                     </CardLg>
                   </div>
                 </div>
