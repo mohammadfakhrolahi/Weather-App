@@ -2,7 +2,7 @@ import React from 'react'
 
 const Progress = (props) => {
   return (
-    <div className='h-100 d-flex flex-column justify-content-between '>
+    <div className='w-100 h-100 d-flex flex-column justify-content-between '>
     <div class="progress">
       <div
         class="progress-bar bg-warning"
@@ -14,7 +14,7 @@ const Progress = (props) => {
         style={props.style}
       ></div>
     </div>
-    <span className='align-self-center display-4 fw-normal'>2</span>
+    <span className='align-self-center display-4 fw-normal'>{props.children}</span>
     </div>
   )
 }

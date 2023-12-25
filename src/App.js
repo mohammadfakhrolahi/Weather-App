@@ -5,8 +5,13 @@ import Icon from './components/Icon/Icon'
 import CardSm from './components/CardSm/CardSm'
 import CardLg from './components/CardLg/CardLg'
 import Progress from './components/Progress/Progress'
+import SunriseSunset from './components/SunriseSunset/SunriseSunset'
+import WindStatus from './components/WindStatus/WindStatus'
 
 const App = () => {
+  const footer = 'testing footer...'
+  const header = 'Header'
+
   return (
     <main className="container mt-4 ">
       <div className="row ">
@@ -72,34 +77,38 @@ const App = () => {
               <div className="row">
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg>
-                      <Progress style={{ width: '25%' }}/>
+                    <CardLg header={header}>
+                      <Progress style={{ width: '25%' }}>2</Progress>
                     </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg />
+                    <CardLg footer={footer} header={header}>
+                      <WindStatus>2.70</WindStatus>
+                    </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg />
+                    <CardLg header={header}>
+                      <SunriseSunset sunrise={'5:40 AM'} sunset={'6:00 PM'}/>
+                    </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg />
+                    <CardLg header={header}/>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg />
+                    <CardLg header={header}/>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg />
+                    <CardLg header={header} />
                   </div>
                 </div>
               </div>
