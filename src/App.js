@@ -77,38 +77,44 @@ const App = () => {
               <div className="row">
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg header={header}>
+                    <CardLg header={'UV Index'}>
                       <Progress style={{ width: '25%' }}>2</Progress>
                     </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg footer={footer} header={header}>
-                      <NumberStatus>2.70</NumberStatus>
+                    <CardLg footer={footer} header={'Wind Status'}>
+                      <NumberStatus unit={'km/h'}>2.70 </NumberStatus>
                     </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg header={header}>
+                    <CardLg header={'Sunrise & Sunset'}>
                       <SunriseSunset sunrise={'5:40 AM'} sunset={'6:00 PM'}/>
                     </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg header={header}/>
+                    <CardLg header={'Humidity'}>
+                      <NumberStatus unit={'%'}>12</NumberStatus>
+                    </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg header={header}/>
+                    <CardLg header={'Visibility'}>
+                    <NumberStatus unit={'km/h'}>5.2</NumberStatus>
+                    </CardLg>
                   </div>
                 </div>
                 <div className="col-4 p-0">
                   <div className="m-2">
-                    <CardLg header={header} />
+                    <CardLg header={'Air Quality'} >
+                    <NumberStatus>105</NumberStatus>
+                    </CardLg>
                   </div>
                 </div>
               </div>

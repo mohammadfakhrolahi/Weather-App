@@ -1,11 +1,11 @@
 import React from 'react'
 
-const NumberStatus = (props) => {
+const NumberStatus = ({ unit, children }) => {
   return (
-    <div >
+    <div>
       <div>
-        <span className='display-6 fw-semibold'>{props.children}</span>
-        <span className='fs-4 ms-2'>km/h</span>
+        <span className="display-6 fw-semibold">{children}</span>
+        <span className="fs-4 ms-1">{unit}</span>
       </div>
     </div>
   )
