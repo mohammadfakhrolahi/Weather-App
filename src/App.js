@@ -14,7 +14,7 @@ const App = () => {
   const [loading, setLoading] = useState(true)
   const [icon, setIcon] = useState(null)
 
-  let location = 'Allentown'
+  let location = 'toronto'
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,13 +41,14 @@ const App = () => {
 
   // console.log(weatherData.current.weather_descriptions)
 
-  // const time = (time) => {
-  //   const extractedTime = time.substring(11, 16)
-  //   return extractedTime
-  // }
-
   if (loading) {
     return <p>Loading...</p>
+  }
+
+  // Time
+  const time = (time) => {
+    const extractedTime = time.split(' ')
+    return `${extractedTime[0]}, ${extractedTime[1]}`
   }
 
   // Get icon class
@@ -59,10 +60,10 @@ const App = () => {
     { 'Light Rain Shower, Rain Shower': 'bi bi-cloud-drizzle' },
     { Mist: 'bi bi-cloud-drizzle' },
     { 'Snow Grains': 'bi bi-cloud-snow' },
-    { 'Snow': 'bi bi-cloud-snow' },
-    { 'Clear': 'bi bi-brightness-low' },
-    { 'Blizzard': 'bi bi-cloud-snow' },
-    { 'Lightning': 'bi bi-lightning' },
+    { Snow: 'bi bi-cloud-snow' },
+    { Clear: 'bi bi-brightness-low' },
+    { Blizzard: 'bi bi-cloud-snow' },
+    { Lightning: 'bi bi-lightning' },
   ]
 
   const weatherCondition = weatherData.current.weather_descriptions
@@ -92,9 +93,9 @@ const App = () => {
             <span className="fs-xxl">{weatherData.current.temperature}</span>
           </div>
           <div className="mt-2">
-            <span>Monday, </span>
-            <span className="text-black-50 ">
-              {weatherData.location.localtime}
+            <span className="text-black">
+              <i className="bi bi-calendar4-week me-2 text-secondary"></i>
+              {time(weatherData.location.localtime)}
             </span>
           </div>
           <div>
