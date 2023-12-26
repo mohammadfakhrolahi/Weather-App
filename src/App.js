@@ -204,7 +204,7 @@ const App = () => {
                   <div className="m-2">
                     <CardLg header={'Average Temperature'}>
                       <NumberStatus>
-                        {weatherData?.forecast[currentDate]?.avgtemp}°
+                        {weatherData?.forecast[currentDate]?.avgtemp}°C
                       </NumberStatus>
                     </CardLg>
                   </div>
