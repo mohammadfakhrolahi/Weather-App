@@ -3,9 +3,9 @@ import React from 'react'
 const Progress = (props) => {
   return (
     <div className='w-100 h-100 d-flex flex-column justify-content-between '>
-    <div class="progress">
+    <div className="progress">
       <div
-        class="progress-bar bg-warning"
+        className="progress-bar bg-warning"
         role="progressbar"
         aria-label="Basic example"
         aria-valuenow="25"
