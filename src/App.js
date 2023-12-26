@@ -90,7 +90,7 @@ const App = () => {
           <Icon className={iconValue} />
           <img src={iconValue} alt="" />
           <div>
-            <span className="fs-xxl">{weatherData.current.temperature}</span>
+            <span className="fs-xxl">{weatherData.current.temperature}°C</span>
           </div>
           <div className="mt-2">
             <span className="text-black">
