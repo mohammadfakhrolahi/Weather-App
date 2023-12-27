@@ -27,9 +27,8 @@ const App = () => {
         )
 
         setWeatherData(data)
-        console.log(data)
       } catch (error) {
-        console.log('Error fetching weather data')
+        alert.log('Error fetching weather data')
       } finally {
         setLoading(false)
       }
@@ -83,8 +82,6 @@ const App = () => {
       </div>
     )
   }
-
-  console.log(cardArray)
 
   return (
     <main className="container mt-4 ">
