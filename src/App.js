@@ -166,7 +166,7 @@ const App = () => {
                 </CardLg>
 
                 <CardLg header={'Wind Status'}>
-                  <NumberStatus unit={'km/h'}>
+                  <NumberStatus unit={'km/h'} icon={'bi bi-wind text-body-tertiary fs-lg'}>
                     {weatherData.current.wind_speed}
                   </NumberStatus>
                 </CardLg>
@@ -177,7 +177,7 @@ const App = () => {
                   />
                 </CardLg>
                 <CardLg header={'Humidity'}>
-                  <NumberStatus unit={'%'}>
+                  <NumberStatus unit={'%'} icon={'bi bi-moisture text-body-tertiary fs-lg'}>
                     {weatherData.current.humidity}
                   </NumberStatus>
                 </CardLg>
@@ -186,8 +186,8 @@ const App = () => {
                     {weatherData.current.visibility}
                   </NumberStatus>
                 </CardLg>
-                <CardLg header={'Average Temperature'}>
-                  <NumberStatus>
+                <CardLg header={'Average Temperature'} >
+                  <NumberStatus icon={'bi bi-thermometer-half text-body-tertiary fs-lg'}>
                     {weatherData?.forecast[currentDate]?.avgtemp}°C
                   </NumberStatus>
                 </CardLg>

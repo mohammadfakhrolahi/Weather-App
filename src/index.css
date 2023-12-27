@@ -2,6 +2,10 @@ body {
   background: #D6D7DA;
 }
 
+.fs-lg {
+  font-size: 44px
+}
+
 .fs-xxl {
   font-size: 52px
 }
