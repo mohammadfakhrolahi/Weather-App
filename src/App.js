@@ -135,7 +135,10 @@ const App = () => {
               {weatherData.current.weather_descriptions}
             </span>
             <span>
-              <i className="bi bi-cloud-rain me-2 text-secondary"></i>Rain-10%
+              <i className="bi bi-thermometer-half text-secondary"></i>
+              {weatherData?.forecast[currentDate]?.mintemp}° /{' '}
+              {weatherData?.forecast[currentDate]?.maxtemp}° Feels Like{' '}
+              {weatherData.current.feelslike}°
             </span>
           </div>
           <div className="d-flex justify-content-center align-items-center bg-light p-4 mt-5 rounded-4">
