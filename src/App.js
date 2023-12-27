@@ -12,7 +12,6 @@ import NumberStatus from './components/NumberStatus/NumberStatus'
 const App = () => {
   const [weatherData, setWeatherData] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [icon, setIcon] = useState(null)
 
   let location = 'toronto'
 
@@ -39,13 +38,11 @@ const App = () => {
     fetchData()
   }, [])
 
-  // console.log(weatherData.current.weather_descriptions)
-
   if (loading) {
     return <p>Loading...</p>
   }
 
-  // Time
+  // Date & Time
   const time = (time) => {
     const extractedTime = time.split(' ')
     return `${extractedTime[0]}, ${extractedTime[1]}`
@@ -77,8 +74,17 @@ const App = () => {
   // Get sunrise/sunset time
   const currentDate = Object.keys(weatherData.forecast)
 
-  const footer = 'testing footer...'
-  const header = 'Header'
+  // CardSm for Week section
+  const cardArray = []
+  for (let i = 0; i <= 6; i++) {
+    cardArray.push(
+      <div key={i} className="col">
+        <CardSm />
+      </div>
+    )
+  }
+
+  console.log(cardArray)
 
   return (
     <main className="container mt-4 ">
@@ -118,97 +124,48 @@ const App = () => {
           </div>
         </div>
         <div className="col-9 bg-light p-4 rounded-end-5">
-          <div className="row  ">
+          <div className="row ">
             <div className="col-12 ">
               <h3 className="mb-4">Week</h3>
-              <div className="row">
-                <div className="col">
-                  <CardSm />
-                </div>
-                <div className="col">
-                  <CardSm />
-                </div>
-                <div className="col">
-                  <CardSm />
-                </div>
-                <div className="col">
-                  <CardSm />
-                </div>
-                <div className="col">
-                  <CardSm />
-                </div>
-                <div className="col">
-                  <CardSm />
-                </div>
-                <div className="col">
-                  <CardSm />
-                </div>
-              </div>
+              <div className="row">{cardArray.map((item) => item)}</div>
             </div>
             <div className="col-12 mt-5">
               <h3 className="mb-4">Today's Highlights</h3>
               <div className="row">
-                <div className="col-4 p-0">
-                  <div className="m-2">
-                    <CardLg header={'UV Index'}>
-                      <Progress
-                        style={{ width: weatherData.current.uv_index * 10 }}
-                      >
-                        {weatherData.current.uv_index}
-                      </Progress>
-                    </CardLg>
-                  </div>
-                </div>
-                <div className="col-4 p-0">
-                  <div className="m-2">
-                    <CardLg header={'Wind Status'}>
-                      <NumberStatus unit={'km/h'}>
-                        {weatherData.current.wind_speed}
-                      </NumberStatus>
-                    </CardLg>
-                  </div>
-                </div>
-                <div className="col-4 p-0">
-                  <div className="m-2">
-                    <CardLg header={'Sunrise & Sunset'}>
-                      <SunriseSunset
-                        sunrise={
-                          weatherData?.forecast[currentDate]?.astro?.sunrise
-                        }
-                        sunset={
-                          weatherData?.forecast[currentDate]?.astro?.sunset
-                        }
-                      />
-                    </CardLg>
-                  </div>
-                </div>
-                <div className="col-4 p-0">
-                  <div className="m-2">
-                    <CardLg header={'Humidity'}>
-                      <NumberStatus unit={'%'}>
-                        {weatherData.current.humidity}
-                      </NumberStatus>
-                    </CardLg>
-                  </div>
-                </div>
-                <div className="col-4 p-0">
-                  <div className="m-2">
-                    <CardLg header={'Visibility'}>
-                      <NumberStatus unit={'km'}>
-                        {weatherData.current.visibility}
-                      </NumberStatus>
-                    </CardLg>
-                  </div>
-                </div>
-                <div className="col-4 p-0">
-                  <div className="m-2">
-                    <CardLg header={'Average Temperature'}>
-                      <NumberStatus>
-                        {weatherData?.forecast[currentDate]?.avgtemp}°C
-                      </NumberStatus>
-                    </CardLg>
-                  </div>
-                </div>
+                <CardLg header={'UV Index'}>
+                  <Progress
+                    style={{ width: weatherData.current.uv_index * 10 }}
+                  >
+                    {weatherData.current.uv_index}
+                  </Progress>
+                </CardLg>
+
+                <CardLg header={'Wind Status'}>
+                  <NumberStatus unit={'km/h'}>
+                    {weatherData.current.wind_speed}
+                  </NumberStatus>
+                </CardLg>
+                <CardLg header={'Sunrise & Sunset'}>
+                  <SunriseSunset
+                    sunrise={weatherData?.forecast[currentDate]?.astro?.sunrise}
+                    sunset={weatherData?.forecast[currentDate]?.astro?.sunset}
+                  />
+                </CardLg>
+                <CardLg header={'Humidity'}>
+                  <NumberStatus unit={'%'}>
+                    {weatherData.current.humidity}
+                  </NumberStatus>
+                </CardLg>
+                <CardLg header={'Visibility'}>
+                  <NumberStatus unit={'km'}>
+                    {weatherData.current.visibility}
+                  </NumberStatus>
+                </CardLg>
+                <CardLg header={'Average Temperature'}>
+                  <NumberStatus>
+                    {weatherData?.forecast[currentDate]?.avgtemp}°C
+                  </NumberStatus>
+                </CardLg>
               </div>
             </div>
           </div>
