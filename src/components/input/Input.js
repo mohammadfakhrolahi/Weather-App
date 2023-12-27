@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = () => {
+const Input = (props) => {
   return (
     <div className="input-group ">
       <button
@@ -12,6 +12,7 @@ const Input = () => {
       </button>
       <input
         type="text"
+        onChange={props.onChange}
         className="form-control rounded-end-pill border border-0"
         placeholder="Search for place..."
       />

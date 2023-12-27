@@ -12,8 +12,9 @@ import NumberStatus from './components/NumberStatus/NumberStatus'
 const App = () => {
   const [weatherData, setWeatherData] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [search, setSearch] = useState('new york')
 
-  let location = 'toronto'
+  let location = search
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +36,30 @@ const App = () => {
     }
 
     fetchData()
-  }, [])
+  }, [search])
+
+  // Search location
+  const onSearch = (e) => {
+    setTimeout(() => {
+      let input = e.target.value
+      const fetchLocation = async () => {
+        try {
+          const { data } = await axios.get(
+            `http://api.weatherstack.com/forecast?access_key=3d105867b135fec4e23967af8e75489d&query=${input}`
+          )
+          if (input.toLowerCase() === data.location.name.toLowerCase()) {
+            setSearch(data.location.name)
+            console.log('Yes')
+          }
+        } catch (error) {
+          console.log("Can't find location!")
+        }
+      }
+
+      fetchLocation()
+      //  console.log(e.target.value)
+    }, 2000)
+  }
 
   if (loading) {
     return <p>Loading...</p>
@@ -88,7 +112,7 @@ const App = () => {
       <div className="row ">
         <div className="col-3 bg-white p-4 rounded-start-5 ">
           <div>
-            <Input />
+            <Input onChange={(e) => onSearch(e)} />
           </div>
           <Icon className={iconValue} />
           <img src={iconValue} alt="" />
