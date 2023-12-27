@@ -75,6 +75,8 @@ const App = () => {
   const iconClass = [
     { Overcast: 'bi bi-clouds' },
     { Sunny: 'bi bi-brightness-high' },
+    { 'Light Rain, Fog': 'bi bi-cloud-drizzle' },
+    { 'Light Rain': 'bi bi-cloud-drizzle' },
     { Rainy: 'bi bi-cloud-rain' },
     { 'Partly cloudy': 'bi bi-cloud' },
     { 'Light Rain Shower, Rain Shower': 'bi bi-cloud-drizzle' },
