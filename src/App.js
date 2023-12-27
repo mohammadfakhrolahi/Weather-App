@@ -78,6 +78,7 @@ const App = () => {
     { Rainy: 'bi bi-cloud-rain' },
     { 'Partly cloudy': 'bi bi-cloud' },
     { 'Light Rain Shower, Rain Shower': 'bi bi-cloud-drizzle' },
+    { 'Light Rain, Mist': 'bi bi-cloud-drizzle' },
     { Mist: 'bi bi-cloud-drizzle' },
     { 'Snow Grains': 'bi bi-cloud-snow' },
     { Snow: 'bi bi-cloud-snow' },
