@@ -49,7 +49,6 @@ const App = () => {
           )
           if (input.toLowerCase() === data.location.name.toLowerCase()) {
             setSearch(data.location.name)
-            console.log('Yes')
           }
         } catch (error) {
           console.log("Can't find location!")
@@ -57,7 +56,6 @@ const App = () => {
       }
 
       fetchLocation()
-      //  console.log(e.target.value)
     }, 2000)
   }
 
